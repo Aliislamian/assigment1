@@ -163,6 +163,7 @@ export default function Cards() {
                 Title:
               </label>
               <input
+                id='title'
                 type='text'
                 name='title'
                 onChange={handleInputChange}
@@ -177,6 +178,7 @@ export default function Cards() {
                 Description:
               </label>
               <textarea
+                id='textarea'
                 name='description'
                 onChange={handleInputChange}
                 value={formData.description}
@@ -189,6 +191,7 @@ export default function Cards() {
                 Category:
               </label>
               <select
+                id='category'
                 name='category'
                 onChange={handleInputChange}
                 value={formData.category}
@@ -207,6 +210,7 @@ export default function Cards() {
                 Price:
               </label>
               <input
+                id='price'
                 type='number'
                 name='price'
                 onChange={handleInputChange}
@@ -220,6 +224,7 @@ export default function Cards() {
                 Sale Price:
               </label>
               <input
+                id='sale-price'
                 type='number'
                 name='salePrice'
                 onChange={handleInputChange}
@@ -242,6 +247,7 @@ export default function Cards() {
             </div>
 
             <button
+              id='submit-btn'
               type='submit'
               className='bg-blue-500 text-white py-2 px-4 mt-4 rounded hover:bg-blue-700 focus:outline-none focus:shadow-outline'
             >
@@ -265,7 +271,7 @@ export default function Cards() {
           </thead>
           <tbody>
             {cardsData.map((card) => (
-              <tr key={card._id} className='bg-gray-100'>
+              <tr id='book-list' key={card._id} className='bg-gray-100'>
                 <td className='py-2 px-4 border text-center'>{card.title}</td>
                 <td className='py-2 px-4 border text-center'>{card.description}</td>
                 <td className='py-2 px-4 border text-center'>{card.category}</td>
@@ -279,12 +285,14 @@ export default function Cards() {
                 <td className='py-2 px-4 border'>
                   <div className='flex justify-center items-center'>
                   <button
+                        id='update-btn'
                         onClick={() => handleUpdate(card._id)}
                         className='bg-blue-500 text-white py-1 px-4 rounded hover:bg-blue-700 focus:outline-none focus:shadow-outline'
                       >
                         Update
                       </button>
                       <button
+                        id='delete-btn'
                         onClick={() => handleDelete(card._id)}
                         className='bg-red-700 text-white px-4 py-2 rounded-md hover:bg-red-400 ml-2'
                       >
